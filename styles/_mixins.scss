@@ -1,0 +1,11 @@
+// @keyframes spin{ 
+//     100%{
+//         transform: rotate(360deg);
+//     }   
+// } just normal css keyframes
+
+@mixin keyframes ($name){
+    @keyframes #{$name}{
+        @content
+    }
+}

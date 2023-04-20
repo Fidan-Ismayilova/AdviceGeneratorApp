@@ -1,0 +1,14 @@
+// Colors
+$light-Cyan: hsl(193, 38%, 86%);
+$neo-Green: hsl(150, 100%, 66%);
+$grayish-Blue: hsl(217, 19%, 38%);
+$dark-GrayishBlue: hsl(217, 19%, 24%);
+$dark-Blue: hsl(218, 23%, 16%);
+
+//Button styles
+$width: 5.4rem;
+$height: 2.8rem;
+$padding: 0.2rem;
+$sides: calc($padding * 2);
+$circle: calc($height - $sides);
+$circle-translate: calc($width - $circle - $sides);

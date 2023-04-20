@@ -1,0 +1,148 @@
+@use "general" as g;
+@use "mixins" as m;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: g.$dark-Blue;
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+
+    // &.day-mode is also valid way to write
+    &:is(.day-mode){
+        background-color: #fff;
+    }
+
+    .toggle__switch{
+        background-color: g.$light-Cyan;
+        width: g.$width;
+        height: g.$height;
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        position: absolute;
+        top: 3.8rem;
+        padding: g.$padding;
+        transition: background-color 250ms;
+
+            &:is(.checked) > .slider{
+                transform: translateX(g.$circle-translate);
+            }
+            
+            &:is(.checked){
+                background-color: g.$neo-Green;
+            }
+
+            &:focus-within{
+                outline: 0.1rem solid g.$neo-Green;
+                outline-offset: 0.2rem;
+            }
+
+        .slider{
+            display: block;
+            width: g.$circle;
+            height: g.$circle;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 0.1rem solid hsl(193, 14%, 74%);
+            transition: transform 250ms;
+        }
+    }
+    .material-icons-outlined{
+        position: absolute;
+        top: 3.8rem;
+        left: 81rem;
+        color: g.$light-Cyan;
+
+        
+    }
+    .light-mode{
+        color: rgb(39, 37, 37);
+    }
+
+    .card{
+        width: 90%;
+        margin: 0 auto;
+        max-width: 50rem;
+        background-color: g.$dark-GrayishBlue;
+        border-radius: 1rem;
+        padding: 4rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+        position: relative;
+        box-shadow: 1rem 1rem 2rem rgb(20, 25, 33, 0.75);
+        transition: transform .5s ease-in-out;
+
+        &:hover{
+            transform: translateY(1.4rem);
+        }
+        h2{
+            color: g.$neo-Green;
+            text-transform: uppercase;
+            letter-spacing: .5rem;
+            font-size: 1.2rem;
+        }
+
+        q{
+            font-size: 2.35rem;
+            text-align: center;
+            color: g.$light-Cyan;
+        }
+
+        picture{
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            img, source{
+                max-width: 96%;
+            }
+        }
+
+        #btn{
+            background-color: g.$neo-Green;
+            padding: 1.8rem;
+            border-radius: 50%;
+            border: none;
+            position: absolute;
+            bottom: -3rem;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            transition: box-shadow .4s ease-in;
+
+        &:is(.disable) {
+            background-color: hsl(217, 19%, 38%);
+            cursor: not-allowed;
+        }
+        &:hover{
+            box-shadow: 0 0 2rem hsla(150, 100%, 66%, 0.75);
+        }
+
+        img{
+            animation: spin 1s linear infinite;
+
+            @include m.keyframes(spin){
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        }
+    }
+}
+

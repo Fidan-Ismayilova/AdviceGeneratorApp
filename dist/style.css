@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: hsl(218, 23%, 16%);
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+}
+body:is(.day-mode) {
+  background-color: #fff;
+}
+body .toggle__switch {
+  background-color: hsl(193, 38%, 86%);
+  width: 5.4rem;
+  height: 2.8rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 3.8rem;
+  padding: 0.2rem;
+  transition: background-color 250ms;
+}
+body .toggle__switch:is(.checked) > .slider {
+  transform: translateX(2.6rem);
+}
+body .toggle__switch:is(.checked) {
+  background-color: hsl(150, 100%, 66%);
+}
+body .toggle__switch:focus-within {
+  outline: 0.1rem solid hsl(150, 100%, 66%);
+  outline-offset: 0.2rem;
+}
+body .toggle__switch .slider {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 0.1rem solid hsl(193, 14%, 74%);
+  transition: transform 250ms;
+}
+body .material-icons-outlined {
+  position: absolute;
+  top: 3.8rem;
+  left: 81rem;
+  color: hsl(193, 38%, 86%);
+}
+body .light-mode {
+  color: rgb(39, 37, 37);
+}
+body .card {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 50rem;
+  background-color: hsl(217, 19%, 24%);
+  border-radius: 1rem;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  box-shadow: 1rem 1rem 2rem rgba(20, 25, 33, 0.75);
+  transition: transform 0.5s ease-in-out;
+}
+body .card:hover {
+  transform: translateY(1.4rem);
+}
+body .card h2 {
+  color: hsl(150, 100%, 66%);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 1.2rem;
+}
+body .card q {
+  font-size: 2.35rem;
+  text-align: center;
+  color: hsl(193, 38%, 86%);
+}
+body .card picture {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+body .card picture img, body .card picture source {
+  max-width: 96%;
+}
+body .card #btn {
+  background-color: hsl(150, 100%, 66%);
+  padding: 1.8rem;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  bottom: -3rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease-in;
+}
+body .card #btn:is(.disable) {
+  background-color: hsl(217, 19%, 38%);
+  cursor: not-allowed;
+}
+body .card #btn:hover {
+  box-shadow: 0 0 2rem hsla(150, 100%, 66%, 0.75);
+}
+body .card #btn img {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */

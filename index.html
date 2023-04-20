@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Advice generator app</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./dist/style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body class="mode">
+
+    <button class="toggle__switch " role="switch" tabindex="0" aria-checked="false">
+      <span class="slider"></span>
+    </button>
+    
+    <span class="material-icons-outlined">dark_mode</span>
+    
+    <main class="card">
+        <h2 id="advice-id"></h2>
+        <q id="advice"></q>
+        <picture>
+          <source media="(min-width: 375px)" srcset="./images/pattern-divider-desktop.svg">
+          <img src="./images/pattern-divider-mobile.svg" alt="desktop-image">
+        </picture>
+        <button id="btn" onclick="randomAdvice()">
+          <img src="./images/icon-dice.svg" alt="dice">
+        </button>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
